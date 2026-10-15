@@ -6,23 +6,24 @@
 <title>Sulit Dito MNL — Brand New Finds & Super Sale Steals</title>
 <meta name="description" content="Sulit Dito MNL — brand new items, super sale steals, same-day ship-out. Holy Spirit, Quezon City. Order via Facebook or 0969 450 7597.">
 <script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F7CBA2'/%3E%3Ccircle cx='32' cy='32' r='26.5' fill='none' stroke='%23FFF7EC' stroke-width='2'/%3E%3Cg transform='translate(20 36) rotate(-14)'%3E%3Cpath d='M-4 -8 C -4 -14 4 -14 4 -8' fill='none' stroke='%231C4A5A' stroke-width='2.2'/%3E%3Crect x='-8' y='-8' width='16' height='18' rx='2.5' fill='%232BA6DB'/%3E%3C/g%3E%3Cg transform='translate(32 38) rotate(-2)'%3E%3Cpath d='M-3.5 -7 C -3.5 -12.5 3.5 -12.5 3.5 -7' fill='none' stroke='%231C4A5A' stroke-width='2.2'/%3E%3Crect x='-7' y='-7' width='14' height='16' rx='2.5' fill='%23FFC93C'/%3E%3C/g%3E%3Cg transform='translate(44 36) rotate(14)'%3E%3Cpath d='M-4 -8 C -4 -14 4 -14 4 -8' fill='none' stroke='%231C4A5A' stroke-width='2.2'/%3E%3Crect x='-8' y='-8' width='16' height='18' rx='2.5' fill='%23F26E1C'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ Tokens (from the logo) ============ */
 :root{
-  --peach:#FCEBDB;        /* page background */
-  --card:#FFF7EC;         /* card background */
-  --peach-2:#F7CBA2;      /* deep peach (logo circle) */
-  --teal:#1C4A5A;         /* logo text dark teal */
-  --teal-2:#123845;       /* footer / deep teal */
+  --peach:#FCEBDB;
+  --card:#FFF7EC;
+  --peach-2:#F7CBA2;
+  --teal:#1C4A5A;
+  --teal-2:#123845;
   --ink:#1C4A5A;
   --ink-soft:rgba(28,74,90,.62);
-  --orange:#F26E1C;       /* orange bag */
+  --orange:#F26E1C;
   --orange-2:#D6580D;
-  --blue:#2BA6DB;         /* blue bag */
-  --yellow:#FFC93C;       /* yellow bag */
+  --blue:#2BA6DB;
+  --yellow:#FFC93C;
   --hair:rgba(28,74,90,.18);
   --disp:'Baloo 2',cursive;
   --sans:'Nunito',sans-serif;
@@ -54,6 +55,14 @@ body::after{content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;o
 .logo-mark{width:36px;height:36px}
 .logo-word{font-family:var(--disp);font-weight:800;font-size:21px;color:var(--teal);line-height:1;white-space:nowrap;letter-spacing:.01em}
 .logo-word em{font-style:normal;color:var(--orange)}
+
+/* ★ NEW: header logo bags do a happy wiggle on hover */
+.bag,.bagl{transform-box:fill-box;transform-origin:50% 12%}
+.logo:hover .logo-mark .bagl{animation:wag .6s ease-in-out}
+.logo:hover .logo-mark g:nth-of-type(2) .bagl{animation-delay:.07s}
+.logo:hover .logo-mark g:nth-of-type(3) .bagl{animation-delay:.14s}
+@keyframes wag{0%,100%{transform:rotate(0)}25%{transform:rotate(10deg)}55%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}}
+
 nav{display:flex;gap:34px}
 .nav-link{position:relative;font-family:var(--sans);font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:6px 0;transition:color .3s}
 .nav-link::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s}
@@ -77,6 +86,9 @@ nav{display:flex;gap:34px}
 .pp-list{max-height:260px;overflow:auto}
 .pp-item{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px dashed rgba(28,74,90,.14);font-size:16px}
 .pp-item span:first-child{flex:1}
+/* ★ NEW: newly added pick slides in */
+.pp-item:last-child{animation:itemIn .35s cubic-bezier(.22,1,.36,1)}
+@keyframes itemIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
 .pp-price{font-family:var(--sans);font-weight:800;font-size:13px;color:var(--orange-2)}
 .pp-x{background:none;border:none;cursor:pointer;color:var(--ink-soft);display:grid;place-items:center;padding:4px;transition:color .3s}
 .pp-x:hover{color:var(--orange-2)}
@@ -94,6 +106,10 @@ nav{display:flex;gap:34px}
 .btn-solid{background:var(--orange);border-color:var(--orange);color:#FFF6EC}
 .btn-solid:hover{background:var(--teal);border-color:var(--teal)}
 .btn-solid:hover svg{transform:translateX(4px)}
+/* ★ NEW: light sheen sweeps across solid buttons on hover */
+.btn-solid{position:relative;overflow:hidden}
+.btn-solid::after{content:"";position:absolute;top:-10%;bottom:-10%;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-22deg);transition:left .65s ease}
+.btn-solid:hover::after{left:135%}
 .btn-ghost{color:var(--teal);border-color:rgba(28,74,90,.5)}
 .btn-ghost:hover{background:var(--teal);color:var(--peach)}
 .visit-btn{padding:11px 22px;font-size:11px}
@@ -106,6 +122,14 @@ nav{display:flex;gap:34px}
 .badge{width:min(280px,58vw);margin:0 auto 20px;filter:drop-shadow(0 18px 30px rgba(28,74,90,.18))}
 .badge-svg{width:100%;height:auto;animation:floaty 7s ease-in-out 2.2s infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ★ NEW: the three logo bags gently sway, each on its own rhythm */
+.badge-svg .bag-b{animation:swayL 5.4s ease-in-out infinite}
+.badge-svg .bag-y{animation:swayR 4.6s ease-in-out .8s infinite}
+.badge-svg .bag-o{animation:swayR 6s ease-in-out 1.5s infinite}
+@keyframes swayL{0%,100%{transform:rotate(0)}50%{transform:rotate(3deg)}}
+@keyframes swayR{0%,100%{transform:rotate(0)}50%{transform:rotate(-3deg)}}
+
 .eyebrow{font-family:var(--sans);font-weight:800;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--orange-2);display:flex;align-items:center;justify-content:center;gap:18px}
 .eyebrow::before,.eyebrow::after{content:"";height:1px;width:54px;background:var(--hair)}
 .hero-name{font-family:var(--disp);font-weight:800;font-size:clamp(3.4rem,10vw,7.6rem);color:var(--teal);line-height:1.05;margin:18px 0 10px;letter-spacing:.01em}
@@ -115,7 +139,10 @@ nav{display:flex;gap:34px}
 .f-svg path{fill:none;stroke:var(--orange);stroke-width:1.4;stroke-linecap:round}
 .f-d{position:absolute;left:50%;top:50%;width:7px;height:7px;background:var(--orange);transform:translate(-50%,-50%) rotate(45deg) scale(0);transition:transform .5s cubic-bezier(.34,1.56,.64,1) .6s}
 .hero-tag{font-style:italic;font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--ink-soft);max-width:38em;margin:0 auto}
-.hand-note{font-family:var(--hand);font-weight:700;font-size:30px;color:var(--orange);margin-top:12px;transform:rotate(-2deg)}
+/* ★ NEW: hand-note types itself with a blinking caret */
+.hand-note{font-family:var(--hand);font-weight:700;font-size:30px;color:var(--orange);margin-top:12px;transform:rotate(-2deg);min-height:1.5em}
+.hand-note.typing::after{content:"";display:inline-block;width:2px;height:.85em;background:var(--orange);margin-left:3px;vertical-align:-.08em;animation:caret 1s steps(2,start) infinite}
+@keyframes caret{to{visibility:hidden}}
 .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 .scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font-family:var(--sans);font-weight:800;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-soft)}
 .scroll-cue .line{width:1px;height:52px;background:var(--hair);position:relative;overflow:hidden}
@@ -145,10 +172,13 @@ body.is-ready .hero-name{clip-path:inset(-20% 0% -20% 0);transition:clip-path 1.
 body.is-ready .eyebrow{opacity:1;transition:opacity 1s ease .1s}
 body.is-ready .hero-tag,body.is-ready .hand-note,body.is-ready .hero-cta{opacity:1;transform:none}
 body.is-ready .hand-note{transform:rotate(-2deg)}
-body.is-ready .scroll-cue,body.is-ready .hero-side,body.is-ready .corner{opacity:1}
+body.is-ready .scroll-cue{opacity:1;transition:opacity .7s ease 1.9s}
+body.is-ready .hero-side,body.is-ready .corner{opacity:1}
 body.is-ready .f-svg path{animation:draw 1.5s ease .85s forwards}
 body.is-ready .f-d{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
 @keyframes draw{to{stroke-dashoffset:0}}
+/* ★ NEW: scroll cue politely fades away once you start scrolling */
+body.has-scrolled .scroll-cue{opacity:0;transition:opacity .45s ease}
 
 /* ============ Marquee ============ */
 .marquee{background:var(--teal);overflow:hidden;padding:17px 0;border-top:1px solid rgba(255,201,60,.35);border-bottom:1px solid rgba(255,201,60,.35)}
@@ -156,7 +186,9 @@ body.is-ready .f-d{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
 .marquee:hover .m-track{animation-play-state:paused}
 .m-group{display:flex;align-items:center;flex:none}
 .m-item{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,235,219,.85);padding:0 30px;white-space:nowrap}
-.m-d{width:6px;height:6px;background:var(--yellow);transform:rotate(45deg);flex:none}
+/* ★ NEW: the little diamonds twirl as the marquee moves */
+.m-d{width:6px;height:6px;background:var(--yellow);transform:rotate(45deg);flex:none;animation:dspin 5s linear infinite}
+@keyframes dspin{to{transform:rotate(405deg)}}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ============ Sections ============ */
@@ -164,14 +196,20 @@ body.is-ready .f-d{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
 .wrap{width:min(1240px,92%);margin:0 auto}
 .kicker{font-family:var(--sans);font-weight:800;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--orange-2);display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .kicker::before{content:"";width:44px;height:1px;background:var(--orange)}
+/* ★ NEW: the kicker dash draws itself in when the section arrives */
+.sec-head .kicker::before{transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.22,1,.36,1) .25s}
+.sec-head.in .kicker::before{transform:scaleX(1)}
 h2{font-family:var(--disp);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.15;color:var(--teal)}
-h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em;color:var(--orange-2)}
+/* ★ NEW: yellow underline draws under the handwritten words */
+h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em;color:var(--orange-2);background:linear-gradient(var(--yellow),var(--yellow)) no-repeat left bottom / 0% 3px;padding-bottom:2px;transition:background-size .9s cubic-bezier(.22,1,.36,1) .45s}
+.sec-head.in h2 em{background-size:100% 3px}
 .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:70px}
 .sec-head p{max-width:54ch;color:var(--ink-soft);margin-top:14px}
 .sec-num{font-family:var(--hand);font-weight:700;font-size:clamp(3.4rem,6vw,5rem);line-height:.9;color:rgba(242,110,28,.3);flex:none}
 .divider{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 0}
 .divider::before,.divider::after{content:"";width:80px;height:1px;background:var(--hair)}
-.divider span{width:7px;height:7px;background:var(--orange);transform:rotate(45deg)}
+/* ★ NEW: divider diamond slowly twirls too */
+.divider span{width:7px;height:7px;background:var(--orange);transform:rotate(45deg);animation:dspin 9s linear infinite}
 
 /* reveal on scroll */
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.22,1,.36,1) var(--d,0s)}
@@ -198,6 +236,16 @@ h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em
 .art .gf{fill:var(--orange);stroke:none;opacity:.92}
 .art .gfill{fill:rgba(242,110,28,.15);stroke:none}
 .art .hairln{stroke-width:1;opacity:.45}
+
+/* ★ NEW: product illustrations draw themselves like hand sketches
+     when scrolled into view (orange accents pop in after the ink) */
+.js .product .art svg *{stroke-dasharray:520;stroke-dashoffset:520;transition:stroke-dashoffset 1.5s cubic-bezier(.65,0,.35,1) var(--d,0s)}
+.js .product.in .art svg *{stroke-dashoffset:0}
+.js .product .art .gf{opacity:0;transition:opacity .6s ease calc(var(--d,0s) + 1.1s)}
+.js .product.in .art .gf{opacity:.92}
+.js .product .art .gfill{opacity:0;transition:opacity .6s ease calc(var(--d,0s) + 1.1s)}
+.js .product.in .art .gfill{opacity:1}
+
 .product:hover .frame{border-color:var(--orange);transform:translateY(-6px)}
 .product:hover .frame::before,.product:hover .frame::after{width:28px;height:28px}
 .product:hover .art{color:var(--orange-2)}
@@ -227,7 +275,9 @@ h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em
 .lede::first-letter{font-family:var(--disp);font-weight:800;font-size:4.2em;float:left;line-height:.82;padding:6px 14px 0 0;color:var(--orange)}
 .sig{margin-top:32px;font-family:var(--hand);font-weight:700;font-size:42px;color:var(--orange-2);line-height:1}
 .sig small{display:block;font-family:var(--sans);font-weight:800;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:12px}
-.quote-card{position:relative;background:var(--teal);color:#FBEADB;padding:64px 42px 42px;transform:rotate(-2deg);box-shadow:0 30px 60px -30px rgba(18,56,69,.55)}
+.quote-card{position:relative;background:var(--teal);color:#FBEADB;padding:64px 42px 42px;transform:rotate(-2deg);box-shadow:0 30px 60px -30px rgba(18,56,69,.55);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+/* ★ NEW: quote card straightens up when hovered */
+.quote-card:hover{transform:rotate(-1deg) translateY(-6px)}
 .quote-card::before,.quote-card::after{content:"";position:absolute;width:18px;height:18px}
 .quote-card::before{top:10px;left:10px;border-top:1px solid var(--yellow);border-left:1px solid var(--yellow)}
 .quote-card::after{bottom:10px;right:10px;border-bottom:1px solid var(--yellow);border-right:1px solid var(--yellow)}
@@ -237,6 +287,13 @@ h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em
 .q-attr{margin-top:24px;font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,235,219,.55)}
 .values{margin-top:56px;border-top:1px solid var(--hair)}
 .value{display:flex;gap:20px;align-items:baseline;padding:17px 0;border-bottom:1px solid var(--hair)}
+/* ★ NEW: value rows slide in one after another */
+.about-grid .reveal.in .value{animation:valIn .55s cubic-bezier(.22,1,.36,1) both}
+.about-grid .reveal.in .value:nth-child(1){animation-delay:.25s}
+.about-grid .reveal.in .value:nth-child(2){animation-delay:.35s}
+.about-grid .reveal.in .value:nth-child(3){animation-delay:.45s}
+.about-grid .reveal.in .value:nth-child(4){animation-delay:.55s}
+@keyframes valIn{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
 .value b{font-family:var(--sans);font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);min-width:150px;flex:none}
 .value span{color:var(--ink-soft);font-size:16px}
 
@@ -248,17 +305,26 @@ h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em
 .rule{background:var(--card);border:1px solid var(--hair);border-top:3px solid var(--ac,var(--orange));padding:30px 28px;transition:transform .4s,border-color .4s}
 .rule:hover{transform:translateY(-5px);border-color:var(--ac,var(--orange))}
 .rule h3{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--teal);margin-bottom:4px}
-.r-em{font-size:26px;line-height:1;margin-bottom:14px;display:inline-block}
+/* ★ NEW: rule emojis gently bob; wiggle on card hover */
+.r-em{font-size:26px;line-height:1;margin-bottom:14px;display:inline-block;transform-origin:50% 100%;animation:bob 3.4s ease-in-out infinite}
+.rule:hover .r-em{animation:wag .55s ease-in-out}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 .rule ul{list-style:none;margin-top:8px}
 .rule li{position:relative;padding:8px 0 8px 20px;color:var(--ink-soft);font-size:15.5px;line-height:1.55}
 .rule li::before{content:"";position:absolute;left:2px;top:1.05em;width:6px;height:6px;background:var(--ac,var(--orange));transform:rotate(45deg)}
 .thanks{margin-top:48px;text-align:center;font-family:var(--hand);font-weight:700;font-size:clamp(28px,4vw,40px);color:var(--orange-2)}
+/* ★ NEW: the shopping-bag emoji swings like it's hanging */
+.bag-swing{display:inline-block;transform-origin:50% 0;animation:swing 2.8s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
 
 /* ============ Contact ============ */
 .contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:76px;align-items:start}
 .contact-grid .blurb{color:var(--ink-soft);margin-bottom:34px}
-.c-row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--hair)}
-.c-row svg{width:18px;height:18px;fill:none;stroke:var(--orange-2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:5px}
+.c-row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--hair);transition:padding-left .35s ease}
+/* ★ NEW: contact rows nudge forward + icon tilts on hover */
+.c-row:hover{padding-left:8px}
+.c-row svg{width:18px;height:18px;fill:none;stroke:var(--orange-2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:5px;transition:transform .35s ease}
+.c-row:hover svg{transform:rotate(-10deg) scale(1.15)}
 .c-row b{display:block;font-family:var(--sans);font-weight:800;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
 .c-row p{color:var(--ink-soft);font-size:16.5px}
 .c-row a{color:var(--orange-2);text-decoration:underline;text-underline-offset:3px}
@@ -267,15 +333,31 @@ h2 em{font-family:var(--hand);font-style:normal;font-weight:700;font-size:1.22em
 .step{display:flex;gap:22px;padding:20px 0;border-bottom:1px solid var(--hair)}
 .step:last-of-type{border-bottom:0}
 .step .n{font-family:var(--hand);font-weight:700;font-size:32px;line-height:1.1;color:var(--orange);flex:none;width:52px}
+/* ★ NEW: step numbers pop in one by one */
+.steps-card.in .step .n{animation:popN .55s cubic-bezier(.34,1.56,.64,1) both}
+.steps-card.in .step:nth-of-type(1) .n{animation-delay:.2s}
+.steps-card.in .step:nth-of-type(2) .n{animation-delay:.32s}
+.steps-card.in .step:nth-of-type(3) .n{animation-delay:.44s}
+.steps-card.in .step:nth-of-type(4) .n{animation-delay:.56s}
+@keyframes popN{0%{opacity:0;transform:scale(.4) rotate(-8deg)}70%{transform:scale(1.15)}100%{opacity:1;transform:none}}
 .step b{display:block;font-family:var(--sans);font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
 .step p{color:var(--ink-soft);font-size:16px}
 .ship-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;align-items:center}
 .ship-label{font-family:var(--sans);font-weight:800;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
-.ship-chip{border:1px solid rgba(28,74,90,.3);padding:6px 13px;font-family:var(--sans);font-weight:700;font-size:11.5px;color:var(--teal)}
+.ship-chip{border:1px solid rgba(28,74,90,.3);padding:6px 13px;font-family:var(--sans);font-weight:700;font-size:11.5px;color:var(--teal);transition:border-color .3s,color .3s}
+.ship-chip:hover{border-color:var(--orange-2);color:var(--orange-2)}
+/* ★ NEW: shipping chips cascade in after the steps */
+.steps-card.in .ship-chip{animation:chipIn .4s ease both}
+.steps-card.in .ship-chip:nth-child(2){animation-delay:.5s}
+.steps-card.in .ship-chip:nth-child(3){animation-delay:.6s}
+.steps-card.in .ship-chip:nth-child(4){animation-delay:.7s}
+@keyframes chipIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* ============ Footer ============ */
 footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
-.foot-name{font-family:var(--disp);font-weight:800;font-size:clamp(2.8rem,6.5vw,4.6rem);color:var(--yellow);text-align:center;line-height:1;letter-spacing:.01em}
+/* ★ NEW: footer name gets a slow golden shimmer */
+.foot-name{font-family:var(--disp);font-weight:800;font-size:clamp(2.8rem,6.5vw,4.6rem);text-align:center;line-height:1;letter-spacing:.01em;background:linear-gradient(100deg,var(--yellow) 42%,#FFE7A3 50%,var(--yellow) 58%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:120% 0}50%{background-position:-20% 0}}
 .foot-tag{text-align:center;font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(252,235,219,.5);margin-top:16px}
 .foot-hr{border:0;height:1px;background:rgba(252,235,219,.16);width:min(1240px,92%);margin:56px auto}
 .foot-grid{width:min(1240px,92%);margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:52px}
@@ -304,10 +386,22 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
 .js .open .mm-link:nth-child(6){transition-delay:.32s}
 
 /* ============ Toasts ============ */
-#toasts{position:fixed;bottom:26px;right:26px;z-index:100;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+#toasts{position:fixed;bottom:88px;right:26px;z-index:100;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
 .toast{display:flex;align-items:center;gap:12px;background:var(--teal);color:var(--peach);border-left:2px solid var(--orange);padding:15px 22px;font-family:var(--sans);font-weight:700;font-size:13px;max-width:min(370px,86vw);opacity:0;transform:translateY(12px);transition:.45s cubic-bezier(.22,1,.36,1);box-shadow:0 18px 40px -18px rgba(18,56,69,.55)}
 .toast.show{opacity:1;transform:none}
 .toast svg{width:15px;height:15px;fill:none;stroke:var(--yellow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ============ Back to top ============ */
+/* ★ NEW: floating button appears after you scroll down */
+#toTop{position:fixed;right:24px;bottom:24px;z-index:90;width:46px;height:46px;border-radius:50%;background:var(--teal);color:var(--peach);border:1px solid rgba(252,235,219,.2);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(14px) scale(.85);pointer-events:none;transition:.4s cubic-bezier(.22,1,.36,1);box-shadow:0 14px 30px -12px rgba(18,56,69,.5)}
+#toTop.show{opacity:1;transform:none;pointer-events:auto}
+#toTop:hover{background:var(--orange);transform:translateY(-3px)}
+#toTop svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ Confetti (brand colors) ============ */
+/* ★ NEW: bursts from the bag icon when something is added to picks */
+.confetti{position:fixed;width:8px;height:8px;z-index:300;pointer-events:none;border-radius:2px;animation:burst .85s cubic-bezier(.16,.8,.4,1) forwards}
+@keyframes burst{from{transform:translate(0,0) rotate(0) scale(1);opacity:1}to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.35);opacity:0}}
 
 /* ============ Responsive ============ */
 @media(max-width:1100px){
@@ -332,7 +426,8 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
   html{scroll-padding-top:82px}
 }
 @media(max-width:600px){
-  #toasts{left:16px;right:16px;align-items:stretch}
+  #toasts{left:16px;right:16px;bottom:88px;align-items:stretch}
+  #toTop{right:16px;bottom:20px}
   .hero-cta .btn{width:100%;justify-content:center}
   .corner.tl,.corner.tr{top:82px}
 }
@@ -342,6 +437,10 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
   .js .hand-note{transform:rotate(-2deg)!important}
   .js .hero-name{clip-path:none!important}
   .js .f-svg path{stroke-dashoffset:0!important}
+  /* ★ NEW: product art shown fully drawn, no motion */
+  .js .product .art svg *{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .js .product .art .gf{opacity:.92!important}
+  .js .product .art .gfill{opacity:1!important}
   html{scroll-behavior:auto}
 }
 </style>
@@ -359,9 +458,9 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
   <div class="header-in">
     <a class="logo" href="#home">
       <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <g transform="translate(15 28) rotate(-20)"><rect x="-10" y="-10" width="20" height="22" rx="3" fill="#2BA6DB" stroke="#FFF6EC" stroke-width="3"/><path d="M-4.5 -10 C -4.5 -17 4.5 -17 4.5 -10" fill="none" stroke="#1C4A5A" stroke-width="2.6" stroke-linecap="round"/></g>
-        <g transform="translate(24 30) rotate(-4)"><rect x="-9" y="-9" width="18" height="20" rx="3" fill="#FFC93C" stroke="#FFF6EC" stroke-width="3"/><path d="M-4 -9 C -4 -15.5 4 -15.5 4 -9" fill="none" stroke="#1C4A5A" stroke-width="2.4" stroke-linecap="round"/></g>
-        <g transform="translate(34 28) rotate(18)"><rect x="-10" y="-10" width="20" height="22" rx="3" fill="#F26E1C" stroke="#FFF6EC" stroke-width="3"/><path d="M-4.5 -10 C -4.5 -17 4.5 -17 4.5 -10" fill="none" stroke="#1C4A5A" stroke-width="2.6" stroke-linecap="round"/></g>
+        <g transform="translate(15 28) rotate(-20)"><g class="bagl"><rect x="-10" y="-10" width="20" height="22" rx="3" fill="#2BA6DB" stroke="#FFF6EC" stroke-width="3"/><path d="M-4.5 -10 C -4.5 -17 4.5 -17 4.5 -10" fill="none" stroke="#1C4A5A" stroke-width="2.6" stroke-linecap="round"/></g></g>
+        <g transform="translate(24 30) rotate(-4)"><g class="bagl"><rect x="-9" y="-9" width="18" height="20" rx="3" fill="#FFC93C" stroke="#FFF6EC" stroke-width="3"/><path d="M-4 -9 C -4 -15.5 4 -15.5 4 -9" fill="none" stroke="#1C4A5A" stroke-width="2.4" stroke-linecap="round"/></g></g>
+        <g transform="translate(34 28) rotate(18)"><g class="bagl"><rect x="-10" y="-10" width="20" height="22" rx="3" fill="#F26E1C" stroke="#FFF6EC" stroke-width="3"/><path d="M-4.5 -10 C -4.5 -17 4.5 -17 4.5 -10" fill="none" stroke="#1C4A5A" stroke-width="2.6" stroke-linecap="round"/></g></g>
       </svg>
       <span class="logo-word">Sulit Dito <em>MNL</em></span>
     </a>
@@ -421,20 +520,20 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
         <circle cx="110" cy="110" r="106" fill="#FFFFFF"/>
         <circle cx="110" cy="110" r="99" fill="#F7CBA2"/>
         <circle cx="110" cy="110" r="89" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.5 13.1"/>
-        <g transform="translate(112 112) rotate(-6)">
+        <g transform="translate(112 112) rotate(-6)"><g class="bag bag-y">
           <path d="M-16 -16 C -16 -38 16 -38 16 -16" fill="none" stroke="#1C4A5A" stroke-width="5" stroke-linecap="round"/>
           <rect x="-26" y="-20" width="52" height="56" rx="5" fill="#FFC93C" stroke="#FFFFFF" stroke-width="6" paint-order="stroke"/>
-        </g>
-        <g transform="translate(82 108) rotate(-22)">
+        </g></g>
+        <g transform="translate(82 108) rotate(-22)"><g class="bag bag-b">
           <path d="M-20 -18 C -20 -46 20 -46 20 -18" fill="none" stroke="#1C4A5A" stroke-width="6" stroke-linecap="round"/>
           <rect x="-32" y="-24" width="64" height="72" rx="6" fill="#2BA6DB" stroke="#FFFFFF" stroke-width="7" paint-order="stroke"/>
           <path d="M-32 -16 L-15 -13 L-19 40 L-32 40 Z" fill="#1B4C5D"/>
-        </g>
-        <g transform="translate(142 106) rotate(18)">
+        </g></g>
+        <g transform="translate(142 106) rotate(18)"><g class="bag bag-o">
           <path d="M-20 -18 C -20 -46 20 -46 20 -18" fill="none" stroke="#1C4A5A" stroke-width="6" stroke-linecap="round"/>
           <rect x="-32" y="-24" width="64" height="72" rx="6" fill="#F26E1C" stroke="#FFFFFF" stroke-width="7" paint-order="stroke"/>
           <path d="M32 -16 L15 -13 L19 40 L32 40 Z" fill="#C75A10"/>
-        </g>
+        </g></g>
       </svg>
     </div>
 
@@ -445,7 +544,7 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
       <span class="f-d"></span>
     </div>
     <p class="hero-tag">Your friendly online tiangge from Holy Spirit, QC — brand new items, tested gadgets, and limited super sale steals, shipped nationwide. Dito, sulit ang bawat piso.</p>
-    <p class="hand-note">sulit na sulit, promise!</p>
+    <p class="hand-note"><span id="typeNote">sulit na sulit, promise!</span></p>
     <div class="hero-cta">
       <a class="btn btn-solid" href="#products"><span>Shop the Finds</span>
         <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -713,7 +812,7 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
       </div>
     </div>
 
-    <p class="thanks reveal">Thank you for shopping with us! 🛍️</p>
+    <p class="thanks reveal">Thank you for shopping with us! <span class="bag-swing">🛍️</span></p>
   </div>
 </section>
 
@@ -823,23 +922,32 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
   </div>
 </footer>
 
+<!-- ★ NEW: floating back-to-top button -->
+<button id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+
 <div id="toasts" aria-live="polite"></div>
 
 <script>
 (function(){
   const $  = (s,c)=> (c||document).querySelector(s);
   const $$ = (s,c)=> Array.prototype.slice.call((c||document).querySelectorAll(s));
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* entrance */
   const ready = ()=> document.body.classList.add('is-ready');
   window.addEventListener('load', ready);
   setTimeout(ready, 1600); // fallback
 
-  /* header state, scroll thread, parallax */
-  const header = $('#header'), fill = $('#threadFill'), diamond = $('#threadDiamond'), mark = $('#heroMark');
+  /* header state, scroll thread, parallax, back-to-top */
+  const header = $('#header'), fill = $('#threadFill'), diamond = $('#threadDiamond'),
+        mark = $('#heroMark'), toTop = $('#toTop');
   let ticking = false;
   function onScroll(){
     header.classList.toggle('scrolled', scrollY > 10);
+    document.body.classList.toggle('has-scrolled', scrollY > 40);
+    toTop.classList.toggle('show', scrollY > 600);
     const max = document.documentElement.scrollHeight - innerHeight;
     const p = max > 0 ? Math.min(1, scrollY / max) : 0;
     fill.style.height = (p * 100) + '%';
@@ -849,6 +957,7 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
   }
   addEventListener('scroll', ()=>{ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
   onScroll();
+  toTop.addEventListener('click', ()=> scrollTo({top:0, behavior: REDUCED ? 'auto' : 'smooth'}));
 
   /* scrollspy */
   const links = $$('.nav-link');
@@ -862,7 +971,7 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
     if(el) spy.observe(el);
   });
 
-  /* reveal on scroll */
+  /* reveal on scroll (also triggers the self-drawing product art) */
   const ro = new IntersectionObserver(es=> es.forEach(e=>{
     if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); }
   }), {threshold:.12});
@@ -878,15 +987,66 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
     setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=> t.remove(), 500); }, 3400);
   }
 
+  /* ★ NEW: typewriter — the hand note writes itself after the hero loads */
+  const noteEl = $('#typeNote');
+  if(noteEl && !REDUCED){
+    const txt = noteEl.textContent, holder = noteEl.parentElement;
+    noteEl.textContent = '';
+    setTimeout(()=>{
+      holder.classList.add('typing');
+      let i = 0;
+      (function type(){
+        noteEl.textContent = txt.slice(0, ++i);
+        if(i < txt.length){ setTimeout(type, 40 + Math.random()*45); }
+        else { setTimeout(()=> holder.classList.remove('typing'), 2800); }
+      })();
+    }, 2300);
+  }
+
+  /* ★ NEW: brand-colored confetti burst */
+  const CCOLORS = ['#F26E1C','#2BA6DB','#FFC93C','#1C4A5A','#F7CBA2'];
+  function confetti(x, y){
+    if(REDUCED) return;
+    for(let i=0;i<14;i++){
+      const p = document.createElement('span');
+      p.className = 'confetti';
+      p.style.left = x + 'px';
+      p.style.top = y + 'px';
+      p.style.background = CCOLORS[i % CCOLORS.length];
+      const a = Math.random() * Math.PI * 2, v = 55 + Math.random() * 75;
+      p.style.setProperty('--dx', (Math.cos(a) * v).toFixed(1) + 'px');
+      p.style.setProperty('--dy', (Math.sin(a) * v - 60).toFixed(1) + 'px');
+      p.style.setProperty('--r', Math.round(Math.random() * 300 - 150) + 'deg');
+      document.body.appendChild(p);
+      setTimeout(()=> p.remove(), 950);
+    }
+  }
+
   /* picks (mini order list) */
   const picks = [], panel = $('#pickPanel'), pickBtn = $('#pickBtn'), count = $('#pickCount');
+
+  /* ★ NEW: total counts up/down smoothly instead of jumping */
+  let shownTotal = 0;
+  function animateTotal(to){
+    const el = $('#ppTotal'), from = shownTotal;
+    shownTotal = to;
+    if(REDUCED || from === to){ el.textContent = '₱' + to.toLocaleString(); return; }
+    const t0 = performance.now(), dur = 550;
+    function tick(t){
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = '₱' + Math.round(from + (to - from) * e).toLocaleString();
+      if(k < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   function renderPicks(){
     const list = $('#ppList');
     count.textContent = picks.length;
     count.classList.toggle('on', picks.length > 0);
     if(!picks.length){
       list.innerHTML = '<p class="pp-empty">No picks yet — the finds await.</p>';
-      $('#ppTotal').textContent = '₱0';
+      animateTotal(0);
       return;
     }
     list.innerHTML = picks.map((it,i)=>
@@ -894,7 +1054,7 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
       '</span><button class="pp-x" data-i="' + i + '" aria-label="Remove">' +
       '<svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>'
     ).join('');
-    $('#ppTotal').textContent = '₱' + picks.reduce((s,i)=> s + i.price, 0).toLocaleString();
+    animateTotal(picks.reduce((s,i)=> s + i.price, 0));
   }
   $$('.reserve').forEach(b=> b.addEventListener('click', ()=>{
     const sizesEl = b.closest('.p-info').querySelector('.sizes');
@@ -903,6 +1063,8 @@ footer{background:var(--teal-2);color:var(--peach);padding:96px 0 40px}
     picks.push({name: label, price: +b.dataset.price});
     renderPicks();
     count.classList.remove('pop'); void count.offsetWidth; count.classList.add('pop');
+    const r = pickBtn.getBoundingClientRect();
+    confetti(r.left + r.width/2, r.top + r.height/2);
     toast(label + ' added to your picks.');
   }));
   $('#ppList').addEventListener('click', e=>{
